@@ -56,4 +56,3 @@ class Auth:
         Returns User instance information from a request object
         """
         return None
-    

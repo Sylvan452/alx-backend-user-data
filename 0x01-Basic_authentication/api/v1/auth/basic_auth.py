@@ -63,7 +63,7 @@ class BasicAuth(Auth):
     def user_object_from_credentials(self, user_email: str,
                                      user_pwd: str) -> TypeVar('User'):
         """
-        Return a User instance based on email and password
+        Return User instance based on email and password
         """
         if user_email is None or not isinstance(user_email, str):
             return None
@@ -82,7 +82,7 @@ class BasicAuth(Auth):
 
     def current_user(self, request=None) -> TypeVar('User'):
         """
-        Returns a User instance based on a received request
+        Returns User instance based on a received request
         """
         Auth_header = self.authorization_header(request)
         if Auth_header is not None:
