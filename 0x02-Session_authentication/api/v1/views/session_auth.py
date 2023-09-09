@@ -38,7 +38,7 @@ def auth_session():
                  strict_slashes=False)
 def handle_logout():
     """
-    Handle user logout
+    This Handle user logout
     """
     from api.v1.app import auth
     if auth.destroy_session(request):
