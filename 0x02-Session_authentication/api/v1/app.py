@@ -34,7 +34,7 @@ elif AUTH_TYPE == "session_db_auth":
 @app.before_request
 def bef_req():
     """
-    Filter each request before it's handled by the proper route
+    Filter each request before it's run the proper route
     """
     if auth is None:
         pass

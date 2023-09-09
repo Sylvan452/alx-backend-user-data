@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-This Definit class of Auth
+Definition of class Auth
 """
+import os
 from flask import request
 from typing import (
     List,
@@ -42,7 +43,7 @@ class Auth:
 
     def authorization_header(self, request=None) -> str:
         """
-        Returns authorization header from a request object
+        Returns the authorization header from a request object
         """
         if request is None:
             return None
@@ -53,6 +54,19 @@ class Auth:
 
     def current_user(self, request=None) -> TypeVar('User'):
         """
-        Returns User instance information from a request object
+        Returns a User instance from information from a request object
         """
         return None
+
+    def session_cookie(self, request=None):
+        """
+        Returns a cookie from a request
+        Args:
+            request : request object
+        Return:
+            value of _my_session_id cookie from request object
+        """
+        if request is None:
+            return None
+        session_name = os.getenv('SESSION_NAME')
+        return request.cookies.get(session_name)
